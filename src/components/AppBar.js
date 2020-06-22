@@ -29,7 +29,7 @@ export default function ProminentAppBar() {
   return (
     <div style={DivComponent}>
        <div>
-        <img src={myimage} height="125px"></img>
+        <img src={myimage} alt='' height="125px"></img>
       </div>
       <div style={{ textAlign: 'center' }}>
         <Typography variant='h4' style={NaneLove} >Love In Cube</Typography>

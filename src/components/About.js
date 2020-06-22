@@ -21,16 +21,13 @@ const AboutInf = {
     marginLeft: "50px",
   }
 
-
-
-
 export default class Basket extends React.Component {
 
     render() {
         return (
             <Container>
                 <div>
-                    <img src={myimage} style={AboutInf}></img>
+                    <img src={myimage} alt='' style={AboutInf}></img>
                 </div>
                 <div style={TextAbout}>
                     <p>Что нужно ценить прежде всего?</p>

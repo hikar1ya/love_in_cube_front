@@ -13,10 +13,12 @@ export default class Order extends React.Component {
         this.state = {
             name: '',
             number: '',
+            comment: '',
             list_id: localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')) : []
         };
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeNumber = this.handleChangeNumber.bind(this);
+        this.handleChangeComment = this.handleChangeComment.bind(this);
     }
 
     handleChangeName(event) {
@@ -27,6 +29,10 @@ export default class Order extends React.Component {
         this.setState({ number: event.target.value });
     }
 
+    handleChangeComment(event) {
+        this.setState({ comment: event.target.value });
+    }
+
     render() {
         return (
             <Container style={{display: 'flex', flexDirection: 'column' }}>
@@ -35,9 +41,11 @@ export default class Order extends React.Component {
                     <Input value={this.state.name} onChange={this.handleChangeName}></Input>
                     <div>Номер:</div>
                     <Input value={this.state.number} onChange={this.handleChangeNumber}></Input>
+                    <div>Комментарий:</div>
+                    <textarea value={this.state.comment} onChange={this.handleChangeComment}></textarea>
                     <div>
                         <Button onClick={() => {
-                            fetch('https://peaceful-hamlet-02281.herokuapp.com/order', { method: "POST", body: [this.state.name, this.state.number, this.state.list_id] })
+                            fetch('https://peaceful-hamlet-02281.herokuapp.com/order', { method: "POST", body: [this.state.name, this.state.number, this.state.comment, this.state.list_id] })
                         }}>Отправить</Button>
                     </div>
                 </div>
