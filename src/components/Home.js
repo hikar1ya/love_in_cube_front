@@ -38,7 +38,7 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:5000/catalog')
+        fetch('https://peaceful-hamlet-02281.herokuapp.com/catalog')
             .then((response) => response.json())
             .then((json) => {
                 this.setState({
