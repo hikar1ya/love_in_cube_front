@@ -50,13 +50,6 @@ export default function ProminentAppBar() {
         <Link to="/basket" style={ButtonMenu} >
         <Button style={ButtonMenu}>Корзина </Button>
         </Link>
-
-      
-        
-       
-
-  
-
       </div>
     </div>
   );

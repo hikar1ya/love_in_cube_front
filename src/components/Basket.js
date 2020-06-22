@@ -9,6 +9,12 @@ import Box from '@material-ui/core/Box';
 import { Link } from 'react-router-dom';
 import './List.css'
 
+const ButtonMenu = {
+    fontFamily: "Snell Roundhand",
+    textDecoration: 'none',
+    marginTop: '50px',
+    color: 'black'
+}
 
 export default class Basket extends React.Component {
 
@@ -78,10 +84,10 @@ export default class Basket extends React.Component {
                                         <Typography color="textSecondary" variant="subtitle1">
                                             Цена: {gift.price} руб.
                                     </Typography>
-                                        <Button>
-                                            <Link to={"/gift/" + gift._id}>Посмотреть содержимое</Link>
-                                        </Button>
-                                        <Button onClick={() => this.delete(gift._id)}>
+                                        <Link to={"/gift/" + gift._id} style={ButtonMenu} >
+                                            <Button style={ButtonMenu}>Посмотреть содержимое </Button>
+                                        </Link>
+                                        <Button onClick={() => this.delete(gift._id)} style={ButtonMenu}>
                                             Удалить из корзины
                                     </Button>
                                     </CardContent>
@@ -89,14 +95,14 @@ export default class Basket extends React.Component {
                             </Card>
                         ))}
                     </Box>
-                    <Box alignItems="flex-start" flex='1' marginTop="15px" marginLeft="30px" borderWidth="15px" borderColor="black">
-                        <div style={{ flex: '1', height: '100px' }}>
+                    <Box alignItems="flex-start" flex='1' marginTop="15px" marginLeft="30px">
+                        <div style={{ flex: '1' }}>
                             <Typography component="h5" variant="h5">
                                 Итого: {this.getPrice()} руб.
                         </Typography>
-                            <Button>
-                                <Link to="/order">Перейти к оформлению заказа</Link>
-                            </Button>
+                            <Link to="/order" style={ButtonMenu} >
+                                <Button style={ButtonMenu}>Перейти к оформлению заказа</Button>
+                            </Link>
                         </div>
                     </Box>
                 </Container>

@@ -60,7 +60,7 @@ export default class Home extends React.Component {
                                     <CardMedia image={gift.image}
                                         style={{ height: '250px' }} title="Gift Card" />
                                     <CardContent>
-                                        <Typography gutterBottom variant="h5" component="h2" className="giftName">
+                                        <Typography gutterBottom variant="h5" component="h2" className="giftName" align="center">
                                             {gift.name}
                                         </Typography>
                                         <Typography variant="body2" color="textSecondary" component="p" align="center">
