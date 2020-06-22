@@ -19,7 +19,7 @@ export default class GiftInfo extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:5000/get-gift', { method: "POST", body: this.props.match.params.id })
+        fetch('https://peaceful-hamlet-02281.herokuapp.com/get-gift', { method: "POST", body: this.props.match.params.id })
             .then((response) => response.json())
             .then((json) => {
                 this.setState({
@@ -56,7 +56,7 @@ export default class GiftInfo extends React.Component {
                             </CardContent>
                             <CardActions style={{marginLeft: 'auto'}}>
                                 <Button onClick={() => {
-                                    fetch('http://localhost:5000/add', { method: "POST", body: _gift._id })
+                                    fetch('https://peaceful-hamlet-02281.herokuapp.com/add', { method: "POST", body: _gift._id })
                                 }}>
                                     Добавить в корзину
                                 </Button>

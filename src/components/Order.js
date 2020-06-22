@@ -37,7 +37,7 @@ export default class Order extends React.Component {
                     <Input value={this.state.number} onChange={this.handleChangeNumber}></Input>
                     <div>
                         <Button onClick={() => {
-                            fetch('http://localhost:5000/order', { method: "POST", body: [this.state.name, this.state.number, this.state.list_id] })
+                            fetch('https://peaceful-hamlet-02281.herokuapp.com/order', { method: "POST", body: [this.state.name, this.state.number, this.state.list_id] })
                         }}>Отправить</Button>
                     </div>
                 </div>

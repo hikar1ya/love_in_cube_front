@@ -31,7 +31,7 @@ export default class Basket extends React.Component {
     componentDidMount() {
         var list_id = localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')) : []
         console.log(list_id)
-        fetch('http://localhost:5000/cart', { method: "POST", body: list_id })
+        fetch('https://peaceful-hamlet-02281.herokuapp.com/cart', { method: "POST", body: list_id })
             .then((response) => response.json())
             .then((json) => {
                 this.setState({
